@@ -67,6 +67,9 @@ func makeImage(w http.ResponseWriter, r *http.Request, font *truetype.Font) {
 	if text == "" || r.URL.Path == "/" {
 		text = "User error"
 	}
+	if text == "favicon" {
+		text = "z0"
+	}
 
 	w.WriteHeader(http.StatusOK)
 
